@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © MageDirect, Inc. All rights reserved.
+  */
+-->
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="ProductMCAPI30270Test">
+        <annotations>
+            <features value="Frontend"/>
+            <stories value="Retrieve drug product information by ID."/>
+            <title value="Get Drug Product Attention Information"/>
+            <description value="Retrieve drug product details by ID successfully"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGEDIRECT-001"/>
+            <group value="example"/>
+            <group value="fromSubmit"/>
+        </annotations>
+        <actionGroup ref="ProductMCAPI30270Case1ActionGroup" stepKey="ProductMCAPI30270Case1ActionGroup"/>
+    </test>
+</tests>
