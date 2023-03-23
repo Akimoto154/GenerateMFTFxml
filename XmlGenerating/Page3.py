@@ -15,7 +15,7 @@ class Page3(QWidget):
         buttonEndProcess = QPushButton('Close', self)
 
         # Click event
-        buttonStartOver.clicked.connect(self.parent.switchToPage1)
+        buttonStartOver.clicked.connect(self.parent.switch_to_page_1)
         buttonEndProcess.clicked.connect(QApplication.instance().quit)
 
         vbox = QVBoxLayout()

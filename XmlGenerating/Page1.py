@@ -14,30 +14,33 @@ class Page1(QWidget):
 
     def initUI(self):
         # Create a button in the window
-        buttonNextPage = QPushButton('Next Step', self)
-        buttonNextPage.clicked.connect(self.switchToPage2)
+        button_next_page = QPushButton('Next Step', self)
+        button_next_page.clicked.connect(self.switch_to_page_2)
 
         # Create check boxes
-        self.checkboxSession = QCheckBox('session', self)
-        self.checkboxCookie = QCheckBox('cookie', self)
-        self.checkboxHttpParams = QCheckBox('http params', self)
+        self.checkbox_session = QCheckBox('session', self)
+        self.checkbox_cookie = QCheckBox('cookie', self)
+        self.checkbox_http_params = QCheckBox('http params', self)
 
         # Create a vertical layout
         vbox = QVBoxLayout()
-        vbox.addWidget(self.checkboxSession)
-        vbox.addWidget(self.checkboxCookie)
-        vbox.addWidget(self.checkboxHttpParams)
-        vbox.addWidget(buttonNextPage)
+        vbox.addWidget(self.checkbox_session)
+        vbox.addWidget(self.checkbox_cookie)
+        vbox.addWidget(self.checkbox_http_params)
+        # vbox.addStretch(1)
+        vbox.addWidget(button_next_page)
         self.setLayout(vbox)
-        
-    def switchToPage2(self):
-        sessionChecked = self.checkboxSession.isChecked()
-        cookieChecked = self.checkboxCookie.isChecked()
-        httpChecked = self.checkboxHttpParams.isChecked()
+
+    def switch_to_page_2(self):
+        session_checked = self.checkbox_session.isChecked()
+        cookie_checked = self.checkbox_cookie.isChecked()
+        http_checked = self.checkbox_http_params.isChecked()
 
         # Emit the signal with the checkbox states
-        self.sendCheckboxStates.emit((sessionChecked, cookieChecked, httpChecked))
-        self.parent.switchToPage2()
+        self.sendCheckboxStates.emit(
+            (session_checked, cookie_checked, http_checked)
+        )
+        self.parent.switch_to_page_2()
 
 
 if __name__ == '__main__':

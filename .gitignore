@@ -1,5 +1,7 @@
 /.DS_Store
-/Generated
 /XmlGenerator.spec
 /build
 /dist
+MainWindow.spec
+config.json
+XmlGenerating/__pycache__/

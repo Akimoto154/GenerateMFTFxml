@@ -1,4 +1,4 @@
-# main.p
+# main.py
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from XmlGenerating.Page1 import Page1
@@ -9,6 +9,9 @@ from XmlGenerating.Page3 import Page3
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.initUI()
+
+    def initUI(self):
         self.setWindowTitle('XML Generator')
         self.resize(800, 600)
         self.stack = QStackedWidget()
@@ -20,16 +23,16 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.page3)
         self.setCentralWidget(self.stack)
 
-    def switchToPage1(self):
+    def switch_to_page_1(self):
         self.stack.setCurrentIndex(0)
 
-    def switchToPage2(self):
+    def switch_to_page_2(self):
         # Get the state of the checkboxes in Page1
-        self.page1.sendCheckboxStates.connect(self.page2.setVisuality)
+        self.page1.sendCheckboxStates.connect(self.page2.set_visuality)
 
         self.stack.setCurrentIndex(1)
-        
-    def switchToPage3(self):
+
+    def switch_to_page_3(self):
         self.stack.setCurrentIndex(2)
 
 
